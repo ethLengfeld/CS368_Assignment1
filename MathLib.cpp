@@ -22,6 +22,7 @@ int absVal(int val) {
 	return val;
 }
 
+
 double absVal(double val) {
 	if(val < 0) {
 		val = val * (-1);
@@ -29,12 +30,14 @@ double absVal(double val) {
 	return val;
 }
 
+
 long absVal(long val) {
 	if(val < 0) {
 		val = val * (-1);
 	}
 	return val;
 }
+
 
 long ceiling(double val) {
 	long ceilingVal = (long) val;
@@ -46,6 +49,7 @@ long ceiling(double val) {
 	return ceilingVal;
 }
 
+
 long floor(double val) {
 	long floorVal = (long) val;
 	if(floorVal-val != 0) {
@@ -56,11 +60,52 @@ long floor(double val) {
 	return floorVal;
 }
 
+
 // TODO
 long round(double val, RoundingRule rule) {
+	switch (rule)
+	{
+		case ROUND_DOWN:
+				cout << "It was ROUND_DOWN" << endl;
+				break;
+		case ROUND_UP:
+				cout << "It was ROUND_UP" << endl;
+				break;
+		case ROUND_TO_ZERO:
+				cout << "It was ROUND_TO_ZERO" << endl;
+				break;
+		case ROUND_AWAY_ZERO:
+				cout << "It was ROUND_AWAY_ZERO" << endl;
+				break;
+		case ROUND_HALF_UP:
+				cout << "It was ROUND_HALF_UP" << endl;
+				break;
+		case ROUND_HALF_DOWN:
+				cout << "It was ROUND_HALF_DOWN" << endl;
+				break;
+		case ROUND_HALF_TO_ZERO:
+				cout << "It was ROUND_HALF_TO_ZERO" << endl;
+				break;
+		case ROUND_HALF_AWAY_ZERO:
+				cout << "It was ROUND_HALF_AWAY_ZERO" << endl;
+				break;
+		case ROUND_HALF_TO_EVEN:
+				cout << "It was ROUND_HALF_TO_EVEN" << endl;
+				break;
+		case ROUND_HALF_TO_ODD:
+				cout << "It was ROUND_HALF_TO_ODD" << endl;
+				break;
+		default:
+			cout << "None specified default is ROUND_DOWN" << endl;
+			break;
+			
 
-	return val;
+
+	}
+
+	return (long)val;
 }
+
 
 double pow(double val, long exponent) {
 	double total = 1;
@@ -82,8 +127,9 @@ string toString(int num, int unsigned radix, bool hasUpperCase) {
 		return "Radix too large.";
 	}
 
-	return 0;
+	return "fix this";
 }
+
 
 int gcd(int val1, int val2) {
 	val1 = absVal(val1);
