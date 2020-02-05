@@ -28,6 +28,8 @@ int main() {
 	if(absVal == 4) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing absVal(double)" << endl;
@@ -36,6 +38,8 @@ int main() {
 	if(absVal == 13.1234) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing absVal(long)" << endl;
@@ -44,14 +48,28 @@ int main() {
 	if(absVal ==100.12341221349871) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
-	cout << "Testing ceiling(double)" << endl;
+	cout << "Testing ceiling(double pos)" << endl;
 	double val = 7.23;
 	long ceilingVal = MATHLIB::ceiling(val);
 		if(ceilingVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
+	}
+
+	cout << "Testing ceiling(double neg)" << endl;
+	double val = -7.23;
+	long ceilingValNeg = MATHLIB::ceiling(val);
+		if(ceilingValNeg == -6) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing floor(double)" << endl;
@@ -60,6 +78,8 @@ int main() {
 	if(flootVal == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 
@@ -74,6 +94,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_UP)" << endl;
@@ -84,6 +106,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_TO_ZERO)" << endl;
@@ -94,6 +118,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_AWAY_ZERO)" << endl;
@@ -104,6 +130,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_HALF_UP)" << endl;
@@ -114,6 +142,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_HALF_DOWN)" << endl;
@@ -124,6 +154,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_HALF_TO_ZERO)" << endl;
@@ -134,6 +166,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_HALF_AWAY_ZERO)" << endl;
@@ -144,6 +178,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_HALF_TO_EVEN)" << endl;
@@ -154,6 +190,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 	cout << "Testing round(double, ROUND_HALF_TO_ODD)" << endl;
@@ -164,6 +202,8 @@ int main() {
 	if(roundedVal == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
 	}
 
 
