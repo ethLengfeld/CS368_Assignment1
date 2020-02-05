@@ -37,16 +37,12 @@ long absVal(long val) {
 }
 
 long ceiling(double val) {
-	long ceilingVal = val;
-	
-
-
+	long ceilingVal = (long) val + 1;
 	return ceilingVal;
 }
 
 long floor(double val) {
-	long floorVal = val;
-
+	long floorVal = (long) val;
 	return floorVal; 
 }
 
