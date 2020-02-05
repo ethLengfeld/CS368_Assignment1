@@ -32,6 +32,7 @@ int main() {
 		cout << "Test Failed..." << endl;
 	}
 
+
 	cout << "Testing absVal(double)" << endl;
 	double valDouble = -13.1234;
 	double absValDouble = MATHLIB::absVal(valDouble);
@@ -42,15 +43,17 @@ int main() {
 		cout << "Test Failed..." << endl;
 	}
 
+
 	cout << "Testing absVal(long)" << endl;
-	long valLong = -100.12341221349871;
+	long valLong = -100;
 	long absValLong = MATHLIB::absVal(valLong);
-	if(absValLong ==100.12341221349871) {
+	if(absValLong == 100) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
 	} else {
 		cout << "Test Failed..." << endl;
 	}
+
 
 	cout << "Testing ceiling(double pos)" << endl;
 	double valCeilingPos = 7.23;
@@ -62,20 +65,31 @@ int main() {
 		cout << "Test Failed..." << endl;
 	}
 
+
 	cout << "Testing ceiling(double neg)" << endl;
 	double valDoubNeg = -7.23;
 	long ceilingValNeg = MATHLIB::ceiling(valDoubNeg);
-		if(ceilingValNeg == -6) {
+		if(ceilingValNeg == -7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
 	} else {
 		cout << "Test Failed..." << endl;
 	}
 
-	cout << "Testing floor(double)" << endl;
+	cout << "Testing floor(double pos)" << endl;
 	double valDoubPos = 7.23;
 	long floorValPos = MATHLIB::floor(valDoubPos);
 	if(floorValPos == 7) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
+	}
+
+	cout << "Testing floor(double neg)" << endl;
+	double valFloorNeg = 7.23;
+	long floorValNeg = MATHLIB::floor(valFloorNeg);
+	if(floorValNeg == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl;
 	} else {

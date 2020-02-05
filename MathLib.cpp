@@ -36,16 +36,23 @@ long absVal(long val) {
 	return val;
 }
 
-// TODO
 long ceiling(double val) {
-	long ceilingVal = (long) val + 1;
-
+	long ceilingVal = (long) val;
+	if(ceilingVal-val != 0) {
+		if(ceilingVal >= 0) {
+			return ceilingVal + 1;
+		}
+	}
 	return ceilingVal;
 }
 
-// TODO
 long floor(double val) {
 	long floorVal = (long) val;
+	if(floorVal-val != 0) {
+		if(floorVal < 0) {
+			return floorVal - 1;
+		}
+	}
 	return floorVal;
 }
 
@@ -55,21 +62,15 @@ long round(double val, RoundingRule rule) {
 	return val;
 }
 
-// TODO
 double pow(double val, long exponent) {
 	double total = 1;
-
-	if (exponent < 0) {
-		while(exponent != 0) {
-			total *= (1 / val);
-			exponent++;
-		}
-		return total;
-	} else {
-		while(exponent != 0) {
-			total *= val;
-			exponent--;
-		}
+	long tempExpo = absVal(exponent);
+	while(tempExpo != 0) {
+		total *= val;
+		tempExpo--;
+	}
+	if(exponent < 0) {
+		total = (1/total);
 	}
 	return total;
 }
@@ -95,9 +96,9 @@ int gcd(int val1, int val2) {
 	int gcd = 1;
 	while(val1 != val2) {
 		if(val1 > val2) {
-			val1 = val1 - val2;
+			val1 -= val2;
 		} else {
-			val2 = val2 - val1;
+			val2 -= val1;
 		}
 	}
 
