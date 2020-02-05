@@ -206,7 +206,51 @@ int main() {
 		cout << "Test Failed..." << endl;
 	}
 
+	cout << "Testing pow(double, long)" << endl;
+	double val = 2;
+	long exponent = 2;
+	double powVal = MATHLIB::pow(val, exponent);
+	if(powVal == 8) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
+	}
 
+	// TODO add testing for toString()
+
+	cout << "Testing gcd(intPos, intPos)" << endl;
+	int val1 = 12;
+	int val2 = 15;
+	int gcd = MATHLIB::gcd(val1, val2);
+	if(gcd == 3) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
+	}
+
+	cout << "Testing gcd(intNeg, intNeg)" << endl;
+	int val1 = -30;
+	int val2 = -15;
+	int gcd = MATHLIB::gcd(val1, val2);
+	if(gcd == 5) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
+	}
+
+	cout << "Testing gcd(intPos, intNeg)" << endl;
+	int val1 = 30;
+	int val2 = -24;
+	int gcd = MATHLIB::gcd(val1, val2);
+	if(gcd == 6) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl;
+	}
 
 	// print test results	
 	cout << "It passed " << noTestsPassed << "/" << noTests << " tests!" << endl;

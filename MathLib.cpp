@@ -36,26 +36,45 @@ long absVal(long val) {
 	return val;
 }
 
+// TODO
 long ceiling(double val) {
 	long ceilingVal = (long) val + 1;
+
 	return ceilingVal;
 }
 
+// TODO
 long floor(double val) {
 	long floorVal = (long) val;
-	return floorVal; 
+	return floorVal;
 }
 
+// TODO
 long round(double val, RoundingRule rule) {
 
-	return 0;
+	return val;
 }
 
+// TODO
 double pow(double val, long exponent) {
+	double total = 1;
 
-	return 0;
+	if (exponent < 0) {
+		while(exponent != 0) {
+			total *= (1 / val);
+			exponent++;
+		}
+		return total;
+	} else {
+		while(exponent != 0) {
+			total *= val;
+			exponent--;
+		}
+	}
+	return total;
 }
 
+// TODO
 string toString(int num, int unsigned radix, bool hasUpperCase) {
 	string str = "";
 	if(radix > 36) {
@@ -66,6 +85,23 @@ string toString(int num, int unsigned radix, bool hasUpperCase) {
 }
 
 int gcd(int val1, int val2) {
+	val1 = absVal(val1);
+	val2 = absVal(val2);
 
-	return 0;
+	if(val1 == val2) {
+		return val1;
+	}
+
+	int gcd = 1;
+	while(val1 != val2) {
+		if(val1 > val2) {
+			val1 =- val2;
+		} else {
+			val2 =- val1;
+		}
+	}
+
+	gcd = val1;
+
+	return gcd;
 }
