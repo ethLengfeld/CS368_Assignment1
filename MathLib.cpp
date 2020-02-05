@@ -95,9 +95,9 @@ int gcd(int val1, int val2) {
 	int gcd = 1;
 	while(val1 != val2) {
 		if(val1 > val2) {
-			val1 =- val2;
+			val1 = val1 - val2;
 		} else {
-			val2 =- val1;
+			val2 = val2 - val1;
 		}
 	}
 
