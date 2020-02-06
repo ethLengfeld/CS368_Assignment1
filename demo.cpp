@@ -240,53 +240,100 @@ int main() {
 	}
 
 
-	cout << "Testing round(double, ROUND_HALF_TO_ZERO)" << endl;
-	double valRHTZ = 7.23;
+	cout << "Testing round(doublePos, ROUND_HALF_TO_ZERO)" << endl;
+	double valRHTZPos = 18.5;
 	rule = ROUND_HALF_TO_ZERO;
-	long roundedValRHTZ = MATHLIB::round(valRHTZ, rule);
+	long roundedValRHTZPos = MATHLIB::round(valRHTZPos, rule);
 	// TODO update with proper value
-	if(roundedValRHTZ == 8) {
+	if(roundedValRHTZPos == 18) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-	cout << "Testing round(double, ROUND_HALF_AWAY_ZERO)" << endl;
-	double valRHAZ = 7.23;
+	cout << "Testing round(doubleNeg, ROUND_HALF_TO_ZERO)" << endl;
+	double valRHTZNeg = -113.5;
+	rule = ROUND_HALF_TO_ZERO;
+	long roundedValRHTZNeg = MATHLIB::round(valRHTZNeg, rule);
+	// TODO update with proper value
+	if(roundedValRHTZNeg == -113) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl << endl;
+	} else {
+		cout << "Test Failed..." << endl << endl;
+	}
+
+
+	cout << "Testing round(doublePos, ROUND_HALF_AWAY_ZERO)" << endl;
+	double valRHAZPos = 39.5;
 	rule = ROUND_HALF_AWAY_ZERO;
-	long roundedValRHAZ = MATHLIB::round(valRHAZ, rule);
-	// TODO update with proper value
-	if(roundedValRHAZ == 8) {
+	long roundedValRHAZPos = MATHLIB::round(valRHAZPos, rule);
+	if(roundedValRHAZPos == 40) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-	cout << "Testing round(double, ROUND_HALF_TO_EVEN)" << endl;
-	double valRHTE = 7.23;
+	cout << "Testing round(doubleNeg, ROUND_HALF_AWAY_ZERO)" << endl;
+	double valRHAZNeg = -39.5;
+	rule = ROUND_HALF_AWAY_ZERO;
+	long roundedValRHAZNeg = MATHLIB::round(valRHAZNeg, rule);
+	// TODO update with proper value
+	if(roundedValRHAZNeg == -39) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl << endl;
+	} else {
+		cout << "Test Failed..." << endl << endl;
+	}
+
+
+	cout << "Testing round(doublePos, ROUND_HALF_TO_EVEN)" << endl;
+	double valRHTEPos = 7.5;
 	rule = ROUND_HALF_TO_EVEN;
-	long roundedValRHTE = MATHLIB::round(valRHTE, rule);
-	// TODO update with proper value
-	if(roundedValRHTE == 8) {
+	long roundedValRHTEPos = MATHLIB::round(valRHTEPos, rule);
+	if(roundedValRHTEPos == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-	cout << "Testing round(double, ROUND_HALF_TO_ODD)" << endl;
-	double valRHTO = 7.23;
-	rule = ROUND_HALF_TO_ODD;
-	long roundedValRHTO = MATHLIB::round(valRHTO, rule);
-	// TODO update with proper value
-	if(roundedValRHTO == 8) {
+	cout << "Testing round(doubleNeg, ROUND_HALF_TO_EVEN)" << endl;
+	double valRHTENeg = -32.5;
+	rule = ROUND_HALF_TO_EVEN;
+	long roundedValRHTENeg = MATHLIB::round(valRHTENeg, rule);
+	if(roundedValRHTENeg == -32) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
+
+
+	cout << "Testing round(doublePos, ROUND_HALF_TO_ODD)" << endl;
+	double valRHTOPos = 7.23;
+	rule = ROUND_HALF_TO_ODD;
+	long roundedValRHTOPos = MATHLIB::round(valRHTOPos, rule);
+	if(roundedValRHTOPos == 7) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl << endl;
+	} else {
+		cout << "Test Failed..." << endl << endl;
+	}
+
+	cout << "Testing round(doubleNeg, ROUND_HALF_TO_ODD)" << endl;
+	double valRHTONeg = -123.5;
+	rule = ROUND_HALF_TO_ODD;
+	long roundedValRHTONeg = MATHLIB::round(valRHTONeg, rule);
+	if(roundedValRHTONeg == -123) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl << endl;
+	} else {
+		cout << "Test Failed..." << endl << endl;
+	}
+
 
 	cout << "Testing pow(doublePos, longPos)" << endl;
 	double valPow = 2;

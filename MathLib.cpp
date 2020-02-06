@@ -61,11 +61,15 @@ long floor(double val) {
 }
 
 
-// TODO
 long round(double val, RoundingRule rule) {
 	long roundedVal = 0;
 	long signFunc = 0;
-	if (val < 0) { 
+	long floorVal = 0;
+	long currVal = val;
+	double floorDiff = 0;
+	double ceilingDiff = 0;
+
+	if (val < 0) {
 		signFunc = -1;
 	} else if (val > 0) {
 		signFunc = 1;
@@ -76,35 +80,74 @@ long round(double val, RoundingRule rule) {
 		case ROUND_DOWN:
 				roundedVal = floor(val);
 				break;
+
 		case ROUND_UP:
 				roundedVal = ceiling(val);
 				break;
+
 		case ROUND_TO_ZERO:
 				roundedVal = ((-1) * signFunc) * ceiling((-1) * absVal(val));
 				break;
+
 		case ROUND_AWAY_ZERO:
 				roundedVal = ((-1) * signFunc) * floor((-1) * absVal(val));
 				break;
+
 		case ROUND_HALF_UP:
 				roundedVal = floor(val + 0.5);
 				break;
+
 		case ROUND_HALF_DOWN:
 				roundedVal = ceiling(val - 0.5);
 				break;
+
 		case ROUND_HALF_TO_ZERO:
-				cout << "It was ROUND_HALF_TO_ZERO" << endl;
+				roundedVal = ((-1) * signFunc) * floor(((-1) * absVal(val)) + 0.5);
 				break;
+
 		case ROUND_HALF_AWAY_ZERO:
-				cout << "It was ROUND_HALF_AWAY_ZERO" << endl;
+				roundedVal = ((-1) * signFunc) * ceiling(((-1) * absVal(val)) - 0.5);
 				break;
+
 		case ROUND_HALF_TO_EVEN:
-				cout << "It was ROUND_HALF_TO_EVEN" << endl;
-				break;
+				if(absVal(currVal-val) == 0.5) {
+					floorVal = floor(val);
+					if(floorVal % 2 == 0) {
+						roundedVal = floorVal;
+					} else {
+						roundedVal = ceiling(val);
+					}
+				} else {
+					floorDiff = absVal(floor(val) - val);
+					ceilingDiff = absVal(ceiling(val) - val);
+					if(floorDiff < ceilingDiff) {
+						roundedVal = floor(val);
+					} else {
+						roundedVal = ceiling(val);
+					}
+				}
+ 				break;
+
 		case ROUND_HALF_TO_ODD:
-				cout << "It was ROUND_HALF_TO_ODD" << endl;
+				if(absVal(currVal-val) == 0.5) {
+					floorVal = floor(val);
+					if(floorVal % 2 == 0) {
+						roundedVal = ceiling(val);
+					} else {
+						roundedVal = floorVal;
+					}
+				} else {
+					floorDiff = absVal(floor(val) - val);
+					ceilingDiff = absVal(ceiling(val) - val);
+					if(floorDiff < ceilingDiff) {
+						roundedVal = floor(val);
+					} else {
+						roundedVal = ceiling(val);
+					}
+				}
 				break;
+
 		default:
-			cout << "None specified default is ROUND_DOWN" << endl;
 			roundedVal = floor(val);
 			break;
 	}
