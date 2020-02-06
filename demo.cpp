@@ -16,7 +16,7 @@
 #include "MathLib.h"
 
 int main() {
-	int noTests = 23;
+	int noTests = 34;
 	int noTestsPassed = 0;
 	cout << "Here are the tests" << endl << endl;
 	
@@ -244,7 +244,6 @@ int main() {
 	double valRHTZPos = 18.5;
 	rule = ROUND_HALF_TO_ZERO;
 	long roundedValRHTZPos = MATHLIB::round(valRHTZPos, rule);
-	// TODO update with proper value
 	if(roundedValRHTZPos == 18) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
@@ -256,7 +255,6 @@ int main() {
 	double valRHTZNeg = -113.5;
 	rule = ROUND_HALF_TO_ZERO;
 	long roundedValRHTZNeg = MATHLIB::round(valRHTZNeg, rule);
-	// TODO update with proper value
 	if(roundedValRHTZNeg == -113) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
@@ -280,7 +278,6 @@ int main() {
 	double valRHAZNeg = -39.5;
 	rule = ROUND_HALF_AWAY_ZERO;
 	long roundedValRHAZNeg = MATHLIB::round(valRHAZNeg, rule);
-	// TODO update with proper value
 	if(roundedValRHAZNeg == -39) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
@@ -357,18 +354,30 @@ int main() {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-cout << "Testing toString(num, radix, false)" << endl;
-	int num = 12;
-	int unsigned radix = 10;
-	bool hasUpperCase = false;
-	string str = MATHLIB::toString(num, radix, hasUpperCase);
-	// TODO fix testing
-	//if(str == 12) {
-	//	noTestsPassed++;
-	//	cout << "Test Passed!" << endl;
-	//} else {
+
+	cout << "Testing toString(numPos, radix, true)" << endl;
+	int numPos = 2;
+	int unsigned radix = 2;
+	bool isLowerCase = true;
+	string strPos = MATHLIB::toString(numPos, radix, isLowerCase);
+	if("10".compare(strPos) == 0) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
 		cout << "Test Failed..." << endl << endl;
-	//}
+	}
+
+	cout << "Testing toString(numNeg, radix, true)" << endl;
+	int numNeg = -2;
+	int unsigned radix = 2;
+	bool isLowerCase = true;
+	string strNeg = MATHLIB::toString(numNeg, radix, isLowerCase);
+	if("-10".compare(strNeg) == 0) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl;
+	} else {
+		cout << "Test Failed..." << endl << endl;
+	}
 
 
 	cout << "Testing gcd(intPos, intPos)" << endl;

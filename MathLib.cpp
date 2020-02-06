@@ -10,6 +10,7 @@
 //
 //
 // Online sources:   https://en.wikipedia.org/wiki/Rounding
+//					 https://www.tutorialspoint.com/computer_logical_organization/number_system_conversion.htm
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -170,13 +171,37 @@ double pow(double val, long exponent) {
 }
 
 // TODO
-string toString(int num, int unsigned radix, bool hasUpperCase) {
-	string str = "";
+string toString(int num, int unsigned radix, bool isLowerCase) {
+	
 	if(radix > 36) {
 		return "Radix too large.";
 	}
 
-	return "fix this";
+	int tempNum = absVal(num);
+	string resultStr = "";
+
+	int remainder = 0;
+	char currChar;
+
+	while(tempNum) {
+		remainder = tempNum % radix;
+		tempNum = tempNum / radix;
+		if (remainder >= 10) {
+			if(isLowerCase) {
+				currChar = (char) ((remainder - 10) + 'a');
+			} else {
+				currChar = (char) ((remainder - 10) + 'A');
+			}
+		} else {
+			currChar = (char) (remainder+'0');
+		}
+		resultStr = currChar + resultStr;
+	}
+	if(num < 0) {
+		resultStr = "-" + resultStr;
+	}
+
+	return resultStr;
 }
 
 
