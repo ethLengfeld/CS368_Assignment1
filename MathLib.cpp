@@ -63,25 +63,33 @@ long floor(double val) {
 
 // TODO
 long round(double val, RoundingRule rule) {
+	long roundedVal = 0;
+	long signFunc = 0;
+	if (val < 0) { 
+		signFunc = -1;
+	} else if (val > 0) {
+		signFunc = 1;
+	}
+
 	switch (rule)
 	{
 		case ROUND_DOWN:
-				cout << "It was ROUND_DOWN" << endl;
+				roundedVal = floor(val);
 				break;
 		case ROUND_UP:
-				cout << "It was ROUND_UP" << endl;
+				roundedVal = ceiling(val);
 				break;
 		case ROUND_TO_ZERO:
-				cout << "It was ROUND_TO_ZERO" << endl;
+				roundedVal = ((-1) * signFunc) * ceiling((-1) * absVal(val));
 				break;
 		case ROUND_AWAY_ZERO:
-				cout << "It was ROUND_AWAY_ZERO" << endl;
+				roundedVal = ((-1) * signFunc) * floor((-1) * absVal(val));
 				break;
 		case ROUND_HALF_UP:
-				cout << "It was ROUND_HALF_UP" << endl;
+				roundedVal = floor(val + 0.5);
 				break;
 		case ROUND_HALF_DOWN:
-				cout << "It was ROUND_HALF_DOWN" << endl;
+				roundedVal = ceiling(val - 0.5);
 				break;
 		case ROUND_HALF_TO_ZERO:
 				cout << "It was ROUND_HALF_TO_ZERO" << endl;
@@ -97,13 +105,11 @@ long round(double val, RoundingRule rule) {
 				break;
 		default:
 			cout << "None specified default is ROUND_DOWN" << endl;
+			roundedVal = floor(val);
 			break;
-			
-
-
 	}
 
-	return (long)val;
+	return roundedVal;
 }
 
 
