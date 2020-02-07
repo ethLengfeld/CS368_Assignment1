@@ -24,77 +24,85 @@ int main() {
 	cout << "Here are the tests" << endl << endl;
 	
 	// Beginning Tests!
+	// reuse these vars for testing
+	int valInt = 0;
+	int valInt1 = 0;
+	double valDouble = 0;
+	long valLong = 0;
+	
+	int resultInt = 0;
+	double resultDouble = 0;
+	long resultLong = 0;
 
+	// absVal(int)
 	cout << "Testing absVal(int)" << endl;
-	int valInt = -4;
-	int absValInt = MATHLIB::absVal(valInt);
-	if(absValInt == 4) {
+	valInt = -4;
+	resultInt = MATHLIB::absVal(valInt);
+	if(resultInt == 4) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// absVal(double)
 	cout << "Testing absVal(double)" << endl;
-	double valDouble = -13.1234;
-	double absValDouble = MATHLIB::absVal(valDouble);
-	if(absValDouble == 13.1234) {
+	valDouble = -13.1234;
+	resultDouble = MATHLIB::absVal(valDouble);
+	if(resultDouble == 13.1234) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// // absVal(long)
 	cout << "Testing absVal(long)" << endl;
-	long valLong = -100;
-	long absValLong = MATHLIB::absVal(valLong);
-	if(absValLong == 100) {
+	valLong = -100;
+	resultLong = MATHLIB::absVal(valLong);
+	if(resultLong == 100) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ceiling(double)
 	cout << "Testing ceiling(double pos)" << endl;
-	double valCeilingPos = 7.23;
-	long ceilingValPos = MATHLIB::ceiling(valCeilingPos);
-	if(ceilingValPos == 8) {
+	valDouble = 7.23;
+	resultLong = MATHLIB::ceiling(valDouble);
+	if(resultLong == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
-
 
 	cout << "Testing ceiling(double neg)" << endl;
-	double valDoubNeg = -7.23;
-	long ceilingValNeg = MATHLIB::ceiling(valDoubNeg);
-	if(ceilingValNeg == -7) {
+	valDouble = -7.23;
+	resultLong = MATHLIB::ceiling(valDouble);
+	if(resultLong == -7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// floor(double)
 	cout << "Testing floor(double pos)" << endl;
-	double valDoubPos = 7.23;
-	long floorValPos = MATHLIB::floor(valDoubPos);
-	if(floorValPos == 7) {
+	valDouble = 7.23;
+	resultLong = MATHLIB::floor(valDouble);
+	if(resultLong == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
-
 
 	cout << "Testing floor(double neg)" << endl;
-	double valFloorNeg = 7.23;
-	long floorValNeg = MATHLIB::floor(valFloorNeg);
-	if(floorValNeg == 7) {
+	valDouble = 7.23;
+	resultLong = MATHLIB::floor(valDouble);
+	if(resultLong == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -102,14 +110,14 @@ int main() {
 	}
 
 
-
+	// round(double, RoundingRule)
 	RoundingRule rule = ROUND_DOWN;
-
+	// ROUND_DOWN
 	cout << "Testing round(doublePos, ROUND_DOWN)" << endl;
-	double valRDPos = 7.23;
+	valDouble = 7.23;
 	rule = ROUND_DOWN;
-	long roundedValRDPos = MATHLIB::round(valRDPos, rule);
-	if(roundedValRDPos == 7) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -117,22 +125,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_DOWN)" << endl;
-	double valRDNeg = -17.23;
+	valDouble = -17.23;
 	rule = ROUND_DOWN;
-	long roundedValRDNeg = MATHLIB::round(valRDNeg, rule);
-	if(roundedValRDNeg == -18) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -18) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_UP
 	cout << "Testing round(doublePos, ROUND_UP)" << endl;
-	double valRUPos = 7.23;
+	valDouble = 7.23;
 	rule = ROUND_UP;
-	long roundedValRUPos = MATHLIB::round(valRUPos, rule);
-	if(roundedValRUPos == 8) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -140,22 +148,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_UP)" << endl;
-	double valRUNeg = -1237.23;
+	valDouble = -1237.23;
 	rule = ROUND_UP;
-	long roundedValRUNeg = MATHLIB::round(valRUNeg, rule);
-	if(roundedValRUNeg == -1237) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -1237) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_TO_ZERO
 	cout << "Testing round(doubleNeg, ROUND_TO_ZERO)" << endl;
-	double valRTZNeg = -7.23;
+	valDouble = -7.23;
 	rule = ROUND_TO_ZERO;
-	long roundedValRTZNeg = MATHLIB::round(valRTZNeg, rule);
-	if(roundedValRTZNeg == -7) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -163,22 +171,22 @@ int main() {
 	}
 
 	cout << "Testing round(doublePos, ROUND_TO_ZERO)" << endl;
-	double valRTZPos = 7.23;
+	valDouble = 7.23;
 	rule = ROUND_TO_ZERO;
-	long roundedValRTZPos = MATHLIB::round(valRTZPos, rule);
-	if(roundedValRTZPos == 7) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_AWAY_ZERO
 	cout << "Testing round(doublePos, ROUND_AWAY_ZERO)" << endl;
-	double valRAZPos = 7.23;
+	valDouble = 7.23;
 	rule = ROUND_AWAY_ZERO;
-	long roundedValRAZPos = MATHLIB::round(valRAZPos, rule);
-	if(roundedValRAZPos == 8) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -186,22 +194,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_AWAY_ZERO)" << endl;
-	double valRAZNeg = -237.23;
+	valDouble = -237.23;
 	rule = ROUND_AWAY_ZERO;
-	long roundedValRAZNeg = MATHLIB::round(valRAZNeg, rule);
-	if(roundedValRAZNeg == -238) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -238) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_HALF_UP
 	cout << "Testing round(doublePos, ROUND_HALF_UP)" << endl;
-	double valRHUPos = 7.5;
+	valDouble = 7.5;
 	rule = ROUND_HALF_UP;
-	long roundedValRHUPos = MATHLIB::round(valRHUPos, rule);
-	if(roundedValRHUPos == 8) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -209,22 +217,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_HALF_UP)" << endl;
-	double valRHUNeg = -23.5;
+	valDouble = -23.5;
 	rule = ROUND_HALF_UP;
-	long roundedValRHUNeg = MATHLIB::round(valRHUNeg, rule);
-	if(roundedValRHUNeg == -23) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -23) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_HALF_DOWN
 	cout << "Testing round(doublePos, ROUND_HALF_DOWN)" << endl;
-	double valRHDPos = 7.5;
+	valDouble = 7.5;
 	rule = ROUND_HALF_DOWN;
-	long roundedValRHDPos = MATHLIB::round(valRHDPos, rule);
-	if(roundedValRHDPos == 7) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -232,22 +240,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_HALF_DOWN)" << endl;
-	double valRHDNeg = -23.5;
+	valDouble = -23.5;
 	rule = ROUND_HALF_DOWN;
-	long roundedValRHDNeg = MATHLIB::round(valRHDNeg, rule);
-	if(roundedValRHDNeg == -24) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -24) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_HALF_TO_ZERO
 	cout << "Testing round(doublePos, ROUND_HALF_TO_ZERO)" << endl;
-	double valRHTZPos = 18.5;
+	valDouble = 18.5;
 	rule = ROUND_HALF_TO_ZERO;
-	long roundedValRHTZPos = MATHLIB::round(valRHTZPos, rule);
-	if(roundedValRHTZPos == 18) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 18) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -255,22 +263,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_HALF_TO_ZERO)" << endl;
-	double valRHTZNeg = -113.5;
+	valDouble = -113.5;
 	rule = ROUND_HALF_TO_ZERO;
-	long roundedValRHTZNeg = MATHLIB::round(valRHTZNeg, rule);
-	if(roundedValRHTZNeg == -113) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -113) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_HALF_AWAY_ZERO
 	cout << "Testing round(doublePos, ROUND_HALF_AWAY_ZERO)" << endl;
-	double valRHAZPos = 39.5;
+	valDouble = 39.5;
 	rule = ROUND_HALF_AWAY_ZERO;
-	long roundedValRHAZPos = MATHLIB::round(valRHAZPos, rule);
-	if(roundedValRHAZPos == 40) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 40) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -278,22 +286,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_HALF_AWAY_ZERO)" << endl;
-	double valRHAZNeg = -39.5;
+	valDouble = -39.5;
 	rule = ROUND_HALF_AWAY_ZERO;
-	long roundedValRHAZNeg = MATHLIB::round(valRHAZNeg, rule);
-	if(roundedValRHAZNeg == -40) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -40) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_HALF_TO_EVEN
 	cout << "Testing round(doublePos, ROUND_HALF_TO_EVEN)" << endl;
-	double valRHTEPos = 7.5;
+	valDouble = 7.5;
 	rule = ROUND_HALF_TO_EVEN;
-	long roundedValRHTEPos = MATHLIB::round(valRHTEPos, rule);
-	if(roundedValRHTEPos == 8) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -301,22 +309,22 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_HALF_TO_EVEN)" << endl;
-	double valRHTENeg = -32.5;
+	valDouble = -32.5;
 	rule = ROUND_HALF_TO_EVEN;
-	long roundedValRHTENeg = MATHLIB::round(valRHTENeg, rule);
-	if(roundedValRHTENeg == -32) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -32) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
-
+	// ROUND_HALF_TO_ODD
 	cout << "Testing round(doublePos, ROUND_HALF_TO_ODD)" << endl;
-	double valRHTOPos = 7.23;
+	valDouble = 7.23;
 	rule = ROUND_HALF_TO_ODD;
-	long roundedValRHTOPos = MATHLIB::round(valRHTOPos, rule);
-	if(roundedValRHTOPos == 7) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == 7) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -324,10 +332,10 @@ int main() {
 	}
 
 	cout << "Testing round(doubleNeg, ROUND_HALF_TO_ODD)" << endl;
-	double valRHTONeg = -123.5;
+	valDouble = -123.5;
 	rule = ROUND_HALF_TO_ODD;
-	long roundedValRHTONeg = MATHLIB::round(valRHTONeg, rule);
-	if(roundedValRHTONeg == -123) {
+	resultLong = MATHLIB::round(valDouble, rule);
+	if(resultLong == -123) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -335,11 +343,12 @@ int main() {
 	}
 
 
+	// pow(double, long)
 	cout << "Testing pow(doublePos, longPos)" << endl;
-	double valPow = 2;
-	long exponentPow = 3;
-	double powVal = MATHLIB::pow(valPow, exponentPow);
-	if(powVal == 8) {
+	valDouble = 2;
+	valLong = 3;
+	resultDouble = MATHLIB::pow(valDouble, valLong);
+	if(resultDouble == 8) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -347,10 +356,10 @@ int main() {
 	}
 
 	cout << "Testing pow(doublePos, longNeg)" << endl;
-	double valPowWithNeg = 2;
-	long exponentPowNeg = -3;
-	double powValPosNeg = MATHLIB::pow(valPowWithNeg, exponentPowNeg);
-	if(powValPosNeg == 0.125) {
+	valDouble = 2;
+	valLong = -3;
+	resultDouble = MATHLIB::pow(valDouble, valLong);
+	if(resultDouble == 0.125) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -358,13 +367,19 @@ int main() {
 	}
 
 
+	// toString(int, int unsigned, bool)
+	int unsigned radix = 0;
+	bool isLowerCase = true;
+	string result = "";
+	string actual = "";
+
 	cout << "Testing toString(numPos, radix, true)" << endl;
-	int numPos = 2;
-	int unsigned radixPos = 2;
-	bool isLowerCasePos = true;
-	string strPos = MATHLIB::toString(numPos, radixPos, isLowerCasePos);
-	string actualStrPos = "10";
-	if((actualStrPos.compare(strPos)) == 0) {
+	valInt = 2;
+	radix = 2;
+	isLowerCase = true;
+	result = MATHLIB::toString(valInt, radix, isLowerCase);
+	actual = "10";
+	if((actual.compare(result)) == 0) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -372,24 +387,37 @@ int main() {
 	}
 
 	cout << "Testing toString(numNeg, radix, true)" << endl;
-	int numNeg = -2;
-	int unsigned radixNeg = 2;
-	bool isLowerCaseNeg = true;
-	string strNeg = MATHLIB::toString(numNeg, radixNeg, isLowerCaseNeg);
-	string actualStrNeg = "-10";
-	if((actualStrNeg.compare(strNeg)) == 0) {
+	valInt = -2;
+	radix = 2;
+	isLowerCase = true;
+	result = MATHLIB::toString(valInt, radix, isLowerCase);
+	actual = "-10";
+	if((actual.compare(result)) == 0) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
+	cout << "Testing toString(numPos, radix, false)" << endl;
+	valInt = 12348;
+	radix = 2;
+	isLowerCase = false;
+	result = MATHLIB::toString(valInt, radix, isLowerCase);
+	actual = "EJN";
+	if((actual.compare(result)) == 0) {
+		noTestsPassed++;
+		cout << "Test Passed!" << endl << endl;
+	} else {
+		cout << "Test Failed..." << endl << endl;
+	}
 
+	// gcd(int, int)
 	cout << "Testing gcd(intPos, intPos)" << endl;
-	int val1PosPos = 12;
-	int val2PosPos = 15;
-	int gcdPosPos = MATHLIB::gcd(val1PosPos, val2PosPos);
-	if(gcdPosPos == 3) {
+	valInt = 12;
+	valInt1 = 15;
+	resultInt = MATHLIB::gcd(valInt, valInt1);
+	if(resultInt == 3) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -397,10 +425,10 @@ int main() {
 	}
 
 	cout << "Testing gcd(intNeg, intNeg)" << endl;
-	int val1NegNeg = -30;
-	int val2NegNeg = -15;
-	int gcdNegNeg = MATHLIB::gcd(val1NegNeg, val2NegNeg);
-	if(gcdNegNeg == 15) {
+	valInt = -30;
+	valInt1 = -15;
+	resultInt = MATHLIB::gcd(valInt, valInt1);
+	if(resultInt == 15) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -408,15 +436,16 @@ int main() {
 	}
 
 	cout << "Testing gcd(intPos, intNeg)" << endl;
-	int val1PosNeg = 30;
-	int val2PosNeg = -24;
-	int gcdPosNeg = MATHLIB::gcd(val1PosNeg, val2PosNeg);
-	if(gcdPosNeg == 6) {
+	valInt = 30;
+	valInt1 = -24;
+	resultInt = MATHLIB::gcd(valInt, valInt1);
+	if(resultInt == 6) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
+
 
 	// print test results	
 	cout << "It passed " << noTestsPassed << "/" << noTests << " tests!" << endl;
