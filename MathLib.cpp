@@ -14,6 +14,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * This class will implement the functions defined in the MathLib header file
+*/
 #include "MathLib.h"
 
 int absVal(int val) {

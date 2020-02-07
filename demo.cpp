@@ -9,10 +9,13 @@
 // CS Login:         lengfeld
 //
 //
-// Online sources:   None
+// Online sources:   https://www.geeksforgeeks.org/stdstringcompare-in-c/
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * This class will demo the functions defined in the Math Library
+*/
 #include "MathLib.h"
 
 int main() {
@@ -278,7 +281,7 @@ int main() {
 	double valRHAZNeg = -39.5;
 	rule = ROUND_HALF_AWAY_ZERO;
 	long roundedValRHAZNeg = MATHLIB::round(valRHAZNeg, rule);
-	if(roundedValRHAZNeg == -39) {
+	if(roundedValRHAZNeg == -40) {
 		noTestsPassed++;
 		cout << "Test Passed!" << endl << endl;
 	} else {
@@ -357,24 +360,26 @@ int main() {
 
 	cout << "Testing toString(numPos, radix, true)" << endl;
 	int numPos = 2;
-	int unsigned radix = 2;
-	bool isLowerCase = true;
-	string strPos = MATHLIB::toString(numPos, radix, isLowerCase);
-	if("10".compare(strPos) == 0) {
+	int unsigned radixPos = 2;
+	bool isLowerCasePos = true;
+	string strPos = MATHLIB::toString(numPos, radixPos, isLowerCasePos);
+	string actualStrPos = "10";
+	if((actualStrPos.compare(strPos)) == 0) {
 		noTestsPassed++;
-		cout << "Test Passed!" << endl;
+		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
 
 	cout << "Testing toString(numNeg, radix, true)" << endl;
 	int numNeg = -2;
-	int unsigned radix = 2;
-	bool isLowerCase = true;
-	string strNeg = MATHLIB::toString(numNeg, radix, isLowerCase);
-	if("-10".compare(strNeg) == 0) {
+	int unsigned radixNeg = 2;
+	bool isLowerCaseNeg = true;
+	string strNeg = MATHLIB::toString(numNeg, radixNeg, isLowerCaseNeg);
+	string actualStrNeg = "-10";
+	if((actualStrNeg.compare(strNeg)) == 0) {
 		noTestsPassed++;
-		cout << "Test Passed!" << endl;
+		cout << "Test Passed!" << endl << endl;
 	} else {
 		cout << "Test Failed..." << endl << endl;
 	}
