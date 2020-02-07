@@ -173,7 +173,7 @@ double pow(double val, long exponent) {
 	return total;
 }
 
-// TODO
+
 string toString(int num, int unsigned radix, bool isLowerCase) {
 	
 	if(radix > 36) {

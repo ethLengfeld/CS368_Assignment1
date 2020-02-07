@@ -5,7 +5,6 @@
 // Semester:         CS 368 Spring 2020
 //
 // Author:           Ethan Lengfeld
-// Student Id:		 9074020836
 // Email:            elengfeld@wisc.edu
 // CS Login:         lengfeld
 //
@@ -18,6 +17,10 @@
 #ifndef MATHLIB
 #define MATHLIB
 
+/**
+ * Math Library consisting of absVal(), ceiling(),
+ * floor(), round(), pow(), toString(), and gcd() functions
+*/
 #include <string>
 #include <iostream>
 
