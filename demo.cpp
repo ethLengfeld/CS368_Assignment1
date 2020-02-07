@@ -19,7 +19,7 @@
 #include "MathLib.h"
 
 int main() {
-	int noTests = 34;
+	int noTests = 35;
 	int noTestsPassed = 0;
 	cout << "Here are the tests" << endl << endl;
 	
@@ -401,7 +401,7 @@ int main() {
 
 	cout << "Testing toString(numPos, radix, false)" << endl;
 	valInt = 12348;
-	radix = 2;
+	radix = 29;
 	isLowerCase = false;
 	result = MATHLIB::toString(valInt, radix, isLowerCase);
 	actual = "EJN";
